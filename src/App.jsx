@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import SiriLogo from "./Components/SiriLogo.jsx";
+import SiriLogo from "./Components/Sirilogo.jsx";
 import SiriHome from "./Pages/SiriHome.jsx";
 
 import Login from "./Pages/Login.jsx";
