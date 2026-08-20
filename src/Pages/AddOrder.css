@@ -1,0 +1,438 @@
+/* =========================================
+   ADD ORDER PAGE CONTAINER
+========================================= */
+
+.add-order-page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background:
+    radial-gradient(
+      circle at 15% 30%,
+      rgba(255, 255, 255, 0.98),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 90% 70%,
+      rgba(255, 225, 145, 0.3),
+      transparent 40%
+    ),
+    linear-gradient(
+      135deg,
+      #fffdf7 0%,
+      #fff3cf 50%,
+      #edc96b 100%
+    );
+  padding: 30px 40px;
+  box-sizing: border-box;
+  font-family:
+    "Segoe UI",
+    "Noto Sans Telugu",
+    Arial,
+    sans-serif;
+  color: #5f451e;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.add-order-header {
+  margin-bottom: 25px;
+}
+
+.back-button {
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #8b5105;
+  font-size: 14px;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.back-button:hover {
+  opacity: 0.75;
+}
+
+.add-order-header h1 {
+  margin: 0;
+  font-size: clamp(24px, 3.5vw, 32px);
+  font-weight: 800;
+  background: linear-gradient(
+    90deg,
+    #8b4b00,
+    #d39a18,
+    #8b4b00
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.add-order-header p {
+  color: #704000;
+  margin: 5px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* =========================================
+   ERROR NOTICE
+========================================= */
+
+.add-order-error {
+  background: rgba(255, 235, 235, 0.9);
+  border: 1px solid rgba(211, 47, 47, 0.2);
+  color: #c62828;
+  padding: 12px 15px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* =========================================
+   CARDS / SECTIONS
+========================================= */
+
+.add-order-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(157, 106, 23, 0.2);
+  border-radius: 14px;
+  padding: 22px;
+  margin-bottom: 18px;
+  box-shadow: 0 8px 24px rgba(100, 60, 5, 0.06);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #6e4b16;
+}
+
+.card-header p {
+  margin: 4px 0 0;
+  color: #8b5105;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* =========================================
+   FORM ELEMENTS
+========================================= */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #6e4b16;
+}
+
+.form-group label span {
+  color: #d32f2f;
+  margin-left: 3px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(157, 106, 23, 0.3);
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 12px 14px;
+  outline: none;
+  font-family: inherit;
+  font-size: 14px;
+  color: #5f451e;
+  transition: all 0.25s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #c78d1c;
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(199, 141, 28, 0.2);
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.secondary-button {
+  border: 1px solid rgba(157, 106, 23, 0.25);
+  background: rgba(255, 243, 207, 0.7);
+  color: #704000;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  transition: background 0.2s;
+}
+
+.secondary-button:hover {
+  background: rgba(255, 243, 207, 1);
+}
+
+.primary-button {
+  border: none;
+  background: linear-gradient(
+    135deg,
+    #9a5b05,
+    #c78d1c
+  );
+  color: white;
+  padding: 11px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 13px;
+  box-shadow: 0 4px 12px rgba(117, 69, 4, 0.22);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.primary-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(117, 69, 4, 0.3);
+}
+
+.primary-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+
+/* =========================================
+   NEW CUSTOMER BOX & PRODUCT ENTRY
+========================================= */
+
+.new-customer {
+  background: rgba(255, 243, 207, 0.35);
+  border: 1px solid rgba(157, 106, 23, 0.2);
+  padding: 18px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 15px;
+  align-items: end;
+}
+
+.product-entry {
+  display: grid;
+  grid-template-columns: 2fr 120px 120px 120px auto;
+  gap: 12px;
+  align-items: end;
+}
+
+.add-product-button {
+  margin-bottom: 0;
+}
+
+
+/* =========================================
+   ADDED ITEMS LIST
+========================================= */
+
+.added-items {
+  margin-top: 18px;
+}
+
+.added-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 20px;
+  background: rgba(255, 248, 230, 0.6);
+  border: 1px solid rgba(157, 106, 23, 0.15);
+  padding: 12px 15px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.added-item strong {
+  color: #5f451e;
+}
+
+.item-info strong {
+  display: block;
+  font-weight: 700;
+}
+
+.item-info span {
+  display: block;
+  color: #8b5105;
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.remove-item {
+  border: none;
+  background: rgba(255, 235, 235, 0.9);
+  color: #c62828;
+  border: 1px solid rgba(211, 47, 47, 0.2);
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+
+/* =========================================
+   SUMMARY / BILL
+========================================= */
+
+.summary {
+  max-width: 500px;
+  margin-left: auto;
+}
+
+.summary > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  color: #704000;
+  font-weight: 600;
+}
+
+.summary input {
+  width: 140px;
+  padding: 9px 10px;
+  border: 1px solid rgba(157, 106, 23, 0.3);
+  background: #ffffff;
+  border-radius: 8px;
+  outline: none;
+  color: #5f451e;
+}
+
+.total-row {
+  border-top: 1px solid rgba(157, 106, 23, 0.2);
+  border-bottom: 1px solid rgba(157, 106, 23, 0.2);
+  margin: 6px 0;
+  font-size: 17px;
+  font-weight: 700;
+  padding: 12px 0 !important;
+  color: #5f451e;
+}
+
+.balance-row {
+  font-size: 16px;
+  font-weight: 700;
+  color: #5f451e;
+}
+
+
+/* =========================================
+   ACTIONS
+========================================= */
+
+.order-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-bottom: 30px;
+}
+
+.cancel-button {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(230, 230, 230, 0.7);
+  color: #555;
+  padding: 11px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  transition: background 0.2s;
+}
+
+.cancel-button:hover {
+  background: rgba(215, 215, 215, 0.8);
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.add-order-loading {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: #704000;
+  background: #fffdf7;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 900px) {
+  .add-order-page {
+    padding: 20px;
+  }
+
+  .new-customer {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .product-entry {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .product-select {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .new-customer {
+    grid-template-columns: 1fr;
+  }
+
+  .product-entry {
+    grid-template-columns: 1fr;
+  }
+
+  .card-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .summary {
+    width: 100%;
+  }
+}   

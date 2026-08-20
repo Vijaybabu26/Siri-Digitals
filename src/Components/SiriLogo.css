@@ -1,0 +1,1247 @@
+/* =========================================
+   GLOBAL RESET
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family:
+    "Segoe UI",
+    "Noto Sans Telugu",
+    Arial,
+    sans-serif;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.siri-logo-container {
+  width: 100%;
+  min-height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+
+/* =========================================
+   SPLASH SCREEN
+========================================= */
+
+.siri-logo.splash-screen {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+  min-height: 100dvh;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  padding: clamp(20px, 4vw, 60px);
+
+  background:
+    radial-gradient(
+      circle at 20% 45%,
+      rgba(255, 255, 255, 0.98),
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 85% 50%,
+      rgba(255, 225, 145, 0.35),
+      transparent 40%
+    ),
+    linear-gradient(
+      135deg,
+      #fffdf7 0%,
+      #fff3cf 50%,
+      #edc96b 100%
+    );
+}
+
+
+/* =========================================
+   DECORATIVE CIRCLES
+========================================= */
+
+.siri-logo.circle {
+  position: absolute;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(150, 95, 10, 0.18);
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+.siri-logo.circle-one {
+  width: clamp(220px, 32vw, 520px);
+  height: clamp(220px, 32vw, 520px);
+
+  right: clamp(-250px, -15vw, -100px);
+  top: clamp(-250px, -15vw, -100px);
+}
+
+.siri-logo.circle-two {
+  width: clamp(180px, 25vw, 360px);
+  height: clamp(180px, 25vw, 360px);
+
+  left: clamp(-180px, -12vw, -80px);
+  bottom: clamp(-180px, -12vw, -80px);
+}
+
+.siri-logo.circle-three {
+  width: clamp(120px, 15vw, 220px);
+  height: clamp(120px, 15vw, 220px);
+
+  left: 45%;
+  top: -100px;
+}
+
+
+/* =========================================
+   LAKSHMI SECTION
+========================================= */
+
+.siri-logo.goddess-section {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 0;
+  min-height: 0;
+
+  z-index: 2;
+
+  animation: goddessSlide 1.2s ease-out forwards;
+}
+
+
+/* =========================================
+   GODDESS GLOW
+========================================= */
+
+.siri-logo.goddess-glow {
+  position: absolute;
+
+  width: min(40vw, 560px);
+  height: min(40vw, 560px);
+
+  max-width: 80%;
+  max-height: 80%;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.98) 0%,
+      rgba(255, 218, 120, 0.45) 45%,
+      transparent 72%
+    );
+
+  filter: blur(5px);
+
+  animation: glowPulse 4s ease-in-out infinite;
+
+  z-index: 0;
+}
+
+
+/* =========================================
+   GODDESS IMAGE
+========================================= */
+
+.siri-logo.goddess-image {
+  position: relative;
+
+  z-index: 2;
+
+  width: auto;
+
+  height: min(82vh, 760px);
+
+  max-width: 88%;
+  max-height: 88%;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 18px 28px rgba(90, 50, 5, 0.25)
+    );
+
+  animation: goddessZoom 1.8s ease-out forwards;
+}
+
+
+/* =========================================
+   BRAND SECTION
+========================================= */
+
+.siri-logo.brand-section {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding:
+    clamp(15px, 3vw, 45px);
+
+  animation: brandSlide 1.3s ease-out forwards;
+}
+
+
+/* =========================================
+   OM SYMBOL
+========================================= */
+
+.siri-logo.symbol {
+  width: clamp(40px, 4vw, 58px);
+  height: clamp(40px, 4vw, 58px);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(168, 105, 10, 0.45);
+
+  color: #a56808;
+
+  font-size: clamp(20px, 2vw, 28px);
+
+  margin-bottom: clamp(8px, 1.5vw, 18px);
+
+  box-shadow:
+    0 4px 15px rgba(140, 90, 10, 0.08);
+
+  animation: symbolAppear 1.7s ease-out forwards;
+}
+
+
+/* =========================================
+   ENGLISH BRAND NAME
+========================================= */
+
+.siri-logo.brand-name-en {
+  margin: 0;
+
+  max-width: 100%;
+
+  font-size:
+    clamp(30px, 5vw, 72px);
+
+  line-height: 1;
+
+  font-weight: 800;
+
+  letter-spacing:
+    clamp(2px, 0.5vw, 6px);
+
+  white-space: nowrap;
+
+  background:
+    linear-gradient(
+      90deg,
+      #8b4b00,
+      #d39a18,
+      #8b4b00
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  animation: brandAppear 1.8s ease-out forwards;
+}
+
+
+/* =========================================
+   TELUGU BRAND NAME
+========================================= */
+
+.siri-logo.brand-name-telugu {
+  margin:
+    clamp(7px, 1vw, 14px)
+    0 0;
+
+  max-width: 100%;
+
+  font-size:
+    clamp(22px, 3.2vw, 48px);
+
+  line-height: 1.25;
+
+  font-weight: 700;
+
+  color: #9b590b;
+
+  letter-spacing:
+    clamp(0px, 0.2vw, 2px);
+
+  white-space: nowrap;
+
+  animation: fadeUp 2s ease-out forwards;
+}
+
+
+/* =========================================
+   TAGLINE
+========================================= */
+
+.siri-logo.main-tagline {
+  margin:
+    clamp(10px, 1.5vw, 20px)
+    0 0;
+
+  max-width: 600px;
+
+  font-size:
+    clamp(15px, 1.8vw, 26px);
+
+  line-height: 1.35;
+
+  font-weight: 700;
+
+  color: #704000;
+
+  animation: fadeUp 2.1s ease-out forwards;
+}
+
+
+/* =========================================
+   GOLD DIVIDER
+========================================= */
+
+.siri-logo.gold-line {
+  width: 0;
+  height: 3px;
+
+  flex-shrink: 0;
+
+  margin-top:
+    clamp(12px, 1.8vw, 22px);
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #a96c0b,
+      #e0b64d,
+      #a96c0b,
+      transparent
+    );
+
+  animation:
+    lineExpand 1.5s 0.6s ease-out forwards;
+}
+
+
+/* =========================================
+   SERVICES
+========================================= */
+
+.siri-logo.services {
+  width: 100%;
+  max-width: 650px;
+
+  margin-top:
+    clamp(12px, 1.8vw, 22px);
+
+  font-size:
+    clamp(12px, 1.3vw, 17px);
+
+  line-height: 1.6;
+
+  color: #5f451e;
+
+  animation: fadeUp 2.3s ease-out forwards;
+}
+
+.siri-logo.services strong {
+  display: block;
+
+  color: #8b5105;
+
+  font-weight: 700;
+}
+
+
+/* =========================================
+   SERVICE LIST
+========================================= */
+
+.siri-logo.service-list {
+  width: 100%;
+
+  margin-top:
+    clamp(8px, 1vw, 14px);
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: clamp(5px, 0.7vw, 9px);
+}
+
+
+/* =========================================
+   SERVICE CHIP
+========================================= */
+
+.siri-logo.service {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    clamp(5px, 0.6vw, 8px)
+    clamp(8px, 1vw, 14px);
+
+  min-height: 30px;
+
+  border-radius: 30px;
+
+  background:
+    rgba(255, 255, 255, 0.5);
+
+  border:
+    1px solid rgba(157, 106, 23, 0.22);
+
+  color: #6e4b16;
+
+  font-size:
+    clamp(10px, 1vw, 13px);
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  box-shadow:
+    0 4px 12px rgba(100, 60, 5, 0.06);
+
+  backdrop-filter: blur(5px);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.siri-logo.service:hover {
+  transform: translateY(-3px);
+
+  background:
+    rgba(255, 255, 255, 0.8);
+
+  box-shadow:
+    0 8px 18px rgba(100, 60, 5, 0.12);
+}
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.siri-logo.contact {
+  margin-top:
+    clamp(12px, 1.8vw, 22px);
+
+  max-width: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding:
+    clamp(8px, 0.9vw, 11px)
+    clamp(15px, 2vw, 24px);
+
+  border-radius: 40px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #9a5b05,
+      #c78d1c
+    );
+
+  color: white;
+
+  font-size:
+    clamp(12px, 1.3vw, 17px);
+
+  line-height: 1.2;
+
+  font-weight: 700;
+
+  letter-spacing:
+    clamp(0.3px, 0.1vw, 1px);
+
+  box-shadow:
+    0 7px 18px rgba(117, 69, 4, 0.25);
+
+  white-space: nowrap;
+
+  animation:
+    contactAppear 2.5s ease-out forwards;
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.siri-logo.loading {
+  margin-top:
+    clamp(12px, 1.8vw, 25px);
+
+  color: #76501d;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+  font-weight: 600;
+
+  text-align: center;
+
+  animation: fadeUp 2.6s ease-out forwards;
+}
+
+
+/* =========================================
+   LOADING BAR
+========================================= */
+
+.siri-logo.loading-bar {
+  width:
+    clamp(120px, 15vw, 180px);
+
+  height: 3px;
+
+  margin:
+    8px auto 0;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background:
+    rgba(120, 80, 20, 0.16);
+}
+
+
+/* =========================================
+   LOADING PROGRESS
+========================================= */
+
+.siri-logo.loading-progress {
+  width: 0;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #9d6207,
+      #e2b84f,
+      #9d6207
+    );
+
+  animation:
+    loading 3.5s linear forwards;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes goddessSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+@keyframes brandSlide {
+  from {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+@keyframes goddessZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.86);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+@keyframes brandAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.75);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+@keyframes symbolAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes contactAppear {
+  from {
+    opacity: 0;
+    transform:
+      translateY(20px)
+      scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+@keyframes lineExpand {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: clamp(100px, 12vw, 160px);
+  }
+}
+
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    transform: scale(0.96);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+}
+
+
+@keyframes loading {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+
+/* =========================================
+   TABLET
+   601px - 950px
+========================================= */
+
+@media (max-width: 950px) and (min-width: 601px) {
+
+  .siri-logo.splash-screen {
+    padding: 25px;
+  }
+
+  .siri-logo.goddess-image {
+    height: 72vh;
+    max-height: 650px;
+  }
+
+  .siri-logo.brand-section {
+    padding: 20px;
+  }
+
+  .siri-logo.brand-name-en {
+    font-size: clamp(30px, 5vw, 52px);
+  }
+
+  .siri-logo.brand-name-telugu {
+    font-size: clamp(22px, 3vw, 36px);
+  }
+
+  .siri-logo.main-tagline {
+    font-size: clamp(14px, 1.8vw, 20px);
+  }
+
+  .siri-logo.service {
+    font-size: 10px;
+    padding: 6px 9px;
+  }
+
+  .siri-logo.contact {
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  body {
+    overflow: hidden;
+  }
+
+  .siri-logo-container {
+    height: 100dvh;
+    min-height: 100dvh;
+  }
+
+  .siri-logo.splash-screen {
+    height: 100dvh;
+    min-height: 100dvh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 0;
+
+    padding:
+      max(10px, env(safe-area-inset-top))
+      15px
+      max(10px, env(safe-area-inset-bottom));
+
+    background:
+      radial-gradient(
+        circle at 50% 20%,
+        rgba(255, 255, 255, 0.98),
+        transparent 43%
+      ),
+      linear-gradient(
+        180deg,
+        #fffdf7 0%,
+        #fff3d0 60%,
+        #edca70 100%
+      );
+  }
+
+
+  /* =====================================
+     MOBILE GODDESS
+  ====================================== */
+
+  .siri-logo.goddess-section {
+    width: 100%;
+
+    height: 46dvh;
+
+    min-height: 0;
+
+    flex-shrink: 1;
+
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .siri-logo.goddess-glow {
+    width: min(75vw, 350px);
+    height: min(75vw, 350px);
+  }
+
+
+  .siri-logo.goddess-image {
+    width: auto;
+
+    height: min(43dvh, 430px);
+
+    max-width: 80vw;
+    max-height: 43dvh;
+  }
+
+
+  /* =====================================
+     MOBILE BRAND
+  ====================================== */
+
+  .siri-logo.brand-section {
+    width: 100%;
+
+    height: 54dvh;
+
+    min-height: 0;
+
+    flex-shrink: 1;
+
+    padding:
+      3px
+      10px
+      5px;
+
+    justify-content: flex-start;
+  }
+
+
+  /* =====================================
+     MOBILE OM
+  ====================================== */
+
+  .siri-logo.symbol {
+    width: 35px;
+    height: 35px;
+
+    font-size: 18px;
+
+    margin-bottom: 5px;
+  }
+
+
+  /* =====================================
+     MOBILE BRAND
+  ====================================== */
+
+  .siri-logo.brand-name-en {
+    font-size:
+      clamp(25px, 8vw, 38px);
+
+    letter-spacing:
+      clamp(1px, 0.6vw, 3px);
+
+    line-height: 1;
+
+    white-space: nowrap;
+  }
+
+
+  .siri-logo.brand-name-telugu {
+    margin-top: 5px;
+
+    font-size:
+      clamp(20px, 6vw, 30px);
+
+    line-height: 1.2;
+
+    white-space: nowrap;
+  }
+
+
+  /* =====================================
+     MOBILE TAGLINE
+  ====================================== */
+
+  .siri-logo.main-tagline {
+    margin-top: 7px;
+
+    font-size:
+      clamp(13px, 4vw, 16px);
+
+    line-height: 1.25;
+
+    max-width: 95%;
+  }
+
+
+  /* =====================================
+     MOBILE DIVIDER
+  ====================================== */
+
+  .siri-logo.gold-line {
+    height: 2px;
+
+    margin-top: 8px;
+  }
+
+
+  /* =====================================
+     MOBILE SERVICES
+  ====================================== */
+
+  .siri-logo.services {
+    margin-top: 8px;
+
+    width: 100%;
+
+    max-width: 390px;
+
+    font-size:
+      clamp(10px, 3vw, 12px);
+
+    line-height: 1.3;
+  }
+
+
+  .siri-logo.service-list {
+    margin-top: 6px;
+
+    gap: 4px;
+
+    max-width: 100%;
+  }
+
+
+  .siri-logo.service {
+    min-height: 25px;
+
+    padding:
+      4px 7px;
+
+    font-size:
+      clamp(8px, 2.5vw, 10px);
+  }
+
+
+  /* =====================================
+     MOBILE CONTACT
+  ====================================== */
+
+  .siri-logo.contact {
+    margin-top: 8px;
+
+    padding:
+      6px 13px;
+
+    gap: 5px;
+
+    font-size:
+      clamp(10px, 3vw, 13px);
+
+    max-width: 95%;
+  }
+
+
+  /* =====================================
+     MOBILE LOADING
+  ====================================== */
+
+  .siri-logo.loading {
+    margin-top: 8px;
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+  }
+
+
+  .siri-logo.loading-bar {
+    width: 125px;
+
+    height: 2px;
+
+    margin-top: 5px;
+  }
+
+
+  /* =====================================
+     MOBILE CIRCLES
+  ====================================== */
+
+  .siri-logo.circle-one {
+    width: 230px;
+    height: 230px;
+
+    right: -140px;
+    top: -130px;
+  }
+
+
+  .siri-logo.circle-two {
+    width: 180px;
+    height: 180px;
+
+    left: -125px;
+    bottom: -120px;
+  }
+
+
+  .siri-logo.circle-three {
+    display: none;
+  }
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+   320px - 380px
+========================================= */
+
+@media (max-width: 380px) {
+
+  .siri-logo.splash-screen {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+
+  .siri-logo.goddess-section {
+    height: 43dvh;
+  }
+
+
+  .siri-logo.brand-section {
+    height: 57dvh;
+  }
+
+
+  .siri-logo.goddess-image {
+    height: min(40dvh, 300px);
+
+    max-width: 75vw;
+  }
+
+
+  .siri-logo.symbol {
+    width: 30px;
+    height: 30px;
+
+    font-size: 16px;
+  }
+
+
+  .siri-logo.brand-name-en {
+    font-size: 24px;
+    letter-spacing: 1px;
+  }
+
+
+  .siri-logo.brand-name-telugu {
+    font-size: 19px;
+  }
+
+
+  .siri-logo.main-tagline {
+    font-size: 12px;
+  }
+
+
+  .siri-logo.services {
+    font-size: 9px;
+  }
+
+
+  .siri-logo.service {
+    min-height: 22px;
+
+    padding:
+      3px 5px;
+
+    font-size: 7.5px;
+  }
+
+
+  .siri-logo.contact {
+    font-size: 10px;
+
+    padding:
+      5px 10px;
+  }
+
+
+  .siri-logo.loading {
+    margin-top: 6px;
+
+    font-size: 6px;
+  }
+
+
+  .siri-logo.loading-bar {
+    width: 110px;
+  }
+}
+
+
+/* =========================================
+   EXTRA SHORT SCREENS
+   Example: 360x640
+========================================= */
+
+@media (max-width: 600px) and (max-height: 700px) {
+
+  .siri-logo.goddess-section {
+    height: 40dvh;
+  }
+
+  .siri-logo.brand-section {
+    height: 60dvh;
+  }
+
+  .siri-logo.goddess-image {
+    height: 37dvh;
+  }
+
+  .siri-logo.symbol {
+    width: 30px;
+    height: 30px;
+
+    font-size: 16px;
+
+    margin-bottom: 3px;
+  }
+
+  .siri-logo.brand-name-en {
+    font-size: clamp(23px, 7vw, 30px);
+  }
+
+  .siri-logo.brand-name-telugu {
+    font-size: clamp(18px, 5.5vw, 24px);
+  }
+
+  .siri-logo.main-tagline {
+    margin-top: 5px;
+    font-size: 11px;
+  }
+
+  .siri-logo.gold-line {
+    margin-top: 5px;
+  }
+
+  .siri-logo.services {
+    margin-top: 5px;
+  }
+
+  .siri-logo.service-list {
+    margin-top: 4px;
+  }
+
+  .siri-logo.service {
+    min-height: 20px;
+    padding: 3px 5px;
+  }
+
+  .siri-logo.contact {
+    margin-top: 6px;
+    padding: 5px 10px;
+  }
+
+  .siri-logo.loading {
+    margin-top: 5px;
+  }
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .siri-logo *,
+  .siri-logo *::before,
+  .siri-logo *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+
+    scroll-behavior: auto !important;
+
+    transition-duration: 0.01ms !important;
+  }
+}

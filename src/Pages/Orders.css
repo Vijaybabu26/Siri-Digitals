@@ -1,0 +1,951 @@
+/* =========================================
+   ORDERS PAGE CONTAINER
+========================================= */
+
+.siri-orders-page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background:
+    radial-gradient(
+      circle at 15% 30%,
+      rgba(255, 255, 255, 0.98),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 90% 70%,
+      rgba(255, 225, 145, 0.3),
+      transparent 40%
+    ),
+    linear-gradient(
+      135deg,
+      #fffdf7 0%,
+      #fff3cf 50%,
+      #edc96b 100%
+    );
+  font-family:
+    "Segoe UI",
+    "Noto Sans Telugu",
+    Arial,
+    sans-serif;
+  color: #5f451e;
+}
+
+
+/* =========================================
+   SIDEBAR INTEGRATION
+========================================= */
+
+.siri-orders-sidebar {
+  width: 250px;
+  min-height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-right: 1px solid rgba(157, 106, 23, 0.2);
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  box-shadow: 4px 0 20px rgba(100, 60, 5, 0.05);
+}
+
+.siri-orders-logo {
+  padding: 26px 20px;
+  border-bottom: 1px solid rgba(157, 106, 23, 0.15);
+}
+
+.siri-orders-logo h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  background: linear-gradient(
+    90deg,
+    #8b4b00,
+    #d39a18,
+    #8b4b00
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.siri-orders-logo span {
+  display: block;
+  margin-top: 3px;
+  color: #8b5105;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.siri-orders-menu {
+  padding: 18px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.siri-orders-menu button,
+.siri-orders-sidebar-bottom button {
+  border: none;
+  background: transparent;
+  padding: 12px 14px;
+  border-radius: 10px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #704000;
+  transition: all 0.25s ease;
+  width: 100%;
+}
+
+.siri-orders-menu button:hover,
+.siri-orders-sidebar-bottom button:hover {
+  background: rgba(255, 243, 207, 0.6);
+  color: #8b4b00;
+}
+
+.siri-orders-menu button.active {
+  background: linear-gradient(
+    135deg,
+    #9a5b05,
+    #c78d1c
+  );
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(117, 69, 4, 0.25);
+}
+
+.siri-orders-menu span,
+.siri-orders-sidebar-bottom span {
+  width: 20px;
+  text-align: center;
+}
+
+.siri-orders-sidebar-bottom {
+  margin-top: auto;
+  padding: 12px;
+  border-top: 1px solid rgba(157, 106, 23, 0.15);
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.siri-orders-main {
+  margin-left: 250px;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.orders-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.orders-header h1 {
+  margin: 0;
+  font-size: clamp(24px, 3.5vw, 32px);
+  font-weight: 800;
+  background: linear-gradient(
+    90deg,
+    #8b4b00,
+    #d39a18,
+    #8b4b00
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.orders-header p {
+  margin: 5px 0 0;
+  color: #704000;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.add-order-button {
+  border: none;
+  background: linear-gradient(
+    135deg,
+    #9a5b05,
+    #c78d1c
+  );
+  color: white;
+  padding: 12px 20px;
+  border-radius: 35px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 0 6px 16px rgba(117, 69, 4, 0.22);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.add-order-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(117, 69, 4, 0.32);
+}
+
+
+/* =========================================
+   PROFESSIONAL FILTERS BAR
+========================================= */
+
+.orders-filters {
+  display: grid;
+  grid-template-columns: minmax(260px, 2fr) minmax(160px, 1fr) minmax(150px, 1fr) minmax(150px, 1fr) auto auto;
+  align-items: flex-end;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(157, 106, 23, 0.2);
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(100, 60, 5, 0.05);
+}
+
+.orders-filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.orders-filter-group label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #6e4b16;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.orders-filter-group input,
+.orders-filter-group select {
+  height: 42px;
+  padding: 0 14px;
+  border: 1px solid rgba(157, 106, 23, 0.3);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  color: #5f451e;
+  outline: none;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.orders-filter-group input:focus,
+.orders-filter-group select:focus {
+  border-color: #c78d1c;
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(199, 141, 28, 0.2);
+}
+
+.orders-search {
+  display: flex;
+  align-items: center;
+  height: 42px;
+  border: 1px solid rgba(157, 106, 23, 0.3);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  overflow: hidden;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.orders-search:focus-within {
+  border-color: #c78d1c;
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(199, 141, 28, 0.2);
+}
+
+.orders-search span {
+  padding-left: 14px;
+  font-size: 15px;
+  color: #b59868;
+}
+
+.orders-search input {
+  flex: 1;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0 12px;
+  font-size: 14px;
+  color: #5f451e;
+}
+
+.orders-search input::placeholder {
+  color: #b59868;
+}
+
+.orders-filter-actions {
+  display: flex;
+  align-items: center;
+  height: 42px;
+}
+
+.clear-filters-button {
+  height: 42px;
+  padding: 0 18px;
+  border: 1px solid rgba(157, 106, 23, 0.3);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #704000;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.clear-filters-button:hover {
+  background: rgba(255, 243, 207, 0.8);
+  border-color: #c78d1c;
+  color: #8b4b00;
+}
+
+.orders-count {
+  height: 42px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 700;
+  color: #8b5105;
+  background: rgba(255, 243, 207, 0.4);
+  padding: 0 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(157, 106, 23, 0.15);
+}
+
+
+/* =========================================
+   CARD & TABLE
+========================================= */
+
+.orders-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(157, 106, 23, 0.2);
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(100, 60, 5, 0.06);
+  overflow: hidden;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.orders-table th {
+  background: rgba(255, 248, 230, 0.8);
+  color: #704000;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: left;
+  padding: 13px 18px;
+  border-bottom: 1px solid rgba(157, 106, 23, 0.15);
+}
+
+.orders-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(157, 106, 23, 0.08);
+  font-size: 13px;
+  color: #5f451e;
+}
+
+.orders-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.orders-table tbody tr:hover {
+  background: rgba(255, 243, 207, 0.4);
+}
+
+.orders-table td small {
+  display: block;
+  color: #b59868;
+  margin-top: 3px;
+}
+
+
+/* =========================================
+   STATUS BADGES & SELECTORS
+========================================= */
+
+.order-status {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  display: inline-block;
+}
+
+.order-status.payment-paid {
+  background: rgba(212, 237, 218, 0.9);
+  color: #155724;
+}
+
+.order-status.payment-partial {
+  background: rgba(255, 243, 205, 0.9);
+  color: #856404;
+}
+
+.order-status.payment-unpaid {
+  background: rgba(255, 235, 235, 0.9);
+  color: #c62828;
+}
+
+.order-status-select {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  border: 1px solid rgba(157, 106, 23, 0.25);
+  background: rgba(255, 255, 255, 0.8);
+  color: #704000;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.order-status-select:focus {
+  border-color: #c78d1c;
+  background: #ffffff;
+}
+
+
+/* =========================================
+   EMPTY & LOADING
+========================================= */
+
+.orders-loading,
+.orders-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: #704000;
+  font-weight: 600;
+}
+
+.orders-empty h3 {
+  color: #6e4b16;
+  font-size: 17px;
+  margin: 14px 0 4px;
+}
+
+.orders-empty p {
+  color: #8b5105;
+  font-size: 13px;
+}
+
+.orders-empty button {
+  border: none;
+  background: linear-gradient(
+    135deg,
+    #9a5b05,
+    #c78d1c
+  );
+  color: white;
+  padding: 10px 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 13px;
+  box-shadow: 0 4px 12px rgba(117, 69, 4, 0.2);
+  margin-top: 14px;
+}
+
+
+/* =========================================
+   ERROR
+========================================= */
+
+.orders-error {
+  background: rgba(255, 235, 235, 0.9);
+  border: 1px solid rgba(211, 47, 47, 0.2);
+  color: #c62828;
+  padding: 12px 15px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* =========================================
+   MODAL WINDOW
+========================================= */
+
+.order-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(80, 45, 0, 0.4);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.order-modal {
+  width: 100%;
+  max-width: 900px;
+  max-height: 92vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 18px;
+  border: 1px solid rgba(157, 106, 23, 0.25);
+  box-shadow: 0 18px 40px rgba(100, 60, 5, 0.2);
+  animation: fadeUp 0.3s ease-out forwards;
+}
+
+.order-modal-header {
+  padding: 22px;
+  border-bottom: 1px solid rgba(157, 106, 23, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.order-modal-header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  background: linear-gradient(
+    90deg,
+    #8b4b00,
+    #d39a18,
+    #8b4b00
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.order-modal-header p {
+  margin: 4px 0 0;
+  color: #8b5105;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.order-modal-header button {
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  cursor: pointer;
+  color: #8b5105;
+  transition: color 0.2s;
+}
+
+.order-modal-header button:hover {
+  color: #8b4b00;
+}
+
+
+/* =========================================
+   FORM & SECTIONS
+========================================= */
+
+.order-form {
+  padding: 22px;
+}
+
+.order-section {
+  margin-bottom: 22px;
+  border-bottom: 1px solid rgba(157, 106, 23, 0.12);
+  padding-bottom: 20px;
+}
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.section-title h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #6e4b16;
+}
+
+.section-title button {
+  border: 1px solid rgba(157, 106, 23, 0.25);
+  background: rgba(255, 243, 207, 0.7);
+  color: #704000;
+  padding: 7px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.section-title button:hover {
+  background: rgba(255, 243, 207, 1);
+}
+
+
+/* =========================================
+   FORM GROUPS & INPUTS
+========================================= */
+
+.order-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 15px;
+}
+
+.order-form-group label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #6e4b16;
+}
+
+.order-form-group label span {
+  color: #d32f2f;
+  margin-left: 3px;
+}
+
+.order-form-group input,
+.order-form-group select,
+.order-form-group textarea {
+  border: 1px solid rgba(157, 106, 23, 0.3);
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 12px 14px;
+  outline: none;
+  font-family: inherit;
+  font-size: 14px;
+  box-sizing: border-box;
+  color: #5f451e;
+  transition: all 0.25s ease;
+}
+
+.order-form-group input:focus,
+.order-form-group select:focus,
+.order-form-group textarea:focus {
+  border-color: #c78d1c;
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(199, 141, 28, 0.2);
+}
+
+
+/* =========================================
+   NEW CUSTOMER BOX
+========================================= */
+
+.new-customer-box {
+  background: rgba(255, 243, 207, 0.35);
+  border: 1px solid rgba(157, 106, 23, 0.2);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.save-new-customer {
+  background: linear-gradient(
+    135deg,
+    #9a5b05,
+    #c78d1c
+  );
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 13px;
+  box-shadow: 0 4px 12px rgba(117, 69, 4, 0.2);
+}
+
+
+/* =========================================
+   ITEMS SECTION
+========================================= */
+
+.add-item-grid {
+  display: grid;
+  grid-template-columns: 2fr 100px 100px 100px auto;
+  gap: 10px;
+  align-items: end;
+}
+
+.add-item-grid .order-form-group {
+  margin-bottom: 0;
+}
+
+.add-item-button {
+  border: none;
+  background: linear-gradient(
+    135deg,
+    #9a5b05,
+    #c78d1c
+  );
+  color: white;
+  padding: 12px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(117, 69, 4, 0.22);
+}
+
+.order-items {
+  margin-top: 15px;
+}
+
+.order-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255, 248, 230, 0.6);
+  border: 1px solid rgba(157, 106, 23, 0.15);
+  padding: 12px 15px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.order-item strong {
+  color: #5f451e;
+}
+
+.order-item small {
+  display: block;
+  color: #8b5105;
+  margin-top: 3px;
+}
+
+.order-item button {
+  border: none;
+  background: rgba(255, 235, 235, 0.9);
+  color: #c62828;
+  border: 1px solid rgba(211, 47, 47, 0.2);
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+
+/* =========================================
+   BILL & TOTALS
+========================================= */
+
+.order-bill {
+  background: rgba(255, 243, 207, 0.35);
+  border: 1px solid rgba(157, 106, 23, 0.2);
+  padding: 18px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.order-bill > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  color: #704000;
+  font-weight: 600;
+}
+
+.order-bill input {
+  width: 130px;
+  border: 1px solid rgba(157, 106, 23, 0.3);
+  background: #ffffff;
+  padding: 8px 10px;
+  border-radius: 8px;
+  outline: none;
+  color: #5f451e;
+}
+
+.order-bill .grand-total {
+  border-top: 1px solid rgba(157, 106, 23, 0.2);
+  border-bottom: 1px solid rgba(157, 106, 23, 0.2);
+  margin: 6px 0;
+  padding: 12px 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: #5f451e;
+}
+
+.balance-row {
+  font-size: 16px;
+  font-weight: 700;
+  color: #5f451e;
+}
+
+
+/* =========================================
+   FORM ACTIONS
+========================================= */
+
+.order-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.cancel-order-button,
+.save-order-button {
+  border: none;
+  padding: 11px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.cancel-order-button {
+  background: rgba(230, 230, 230, 0.7);
+  color: #555;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: background 0.2s;
+}
+
+.cancel-order-button:hover {
+  background: rgba(215, 215, 215, 0.8);
+}
+
+.save-order-button {
+  background: linear-gradient(
+    135deg,
+    #9a5b05,
+    #c78d1c
+  );
+  color: white;
+  box-shadow: 0 4px 12px rgba(117, 69, 4, 0.22);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.save-order-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(117, 69, 4, 0.3);
+}
+
+.save-order-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+
+/* =========================================
+   FORM ERROR
+========================================= */
+
+.order-form-error {
+  background: rgba(255, 235, 235, 0.9);
+  border: 1px solid rgba(211, 47, 47, 0.2);
+  color: #c62828;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* =========================================
+   ANIMATIONS & RESPONSIVE DESIGN
+========================================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1100px) {
+  .orders-filters {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .siri-orders-sidebar {
+    width: 70px;
+  }
+
+  .siri-orders-logo h2 {
+    font-size: 0;
+  }
+
+  .siri-orders-logo h2::after {
+    content: "SD";
+    font-size: 16px;
+    font-weight: 800;
+    color: #8b4b00;
+  }
+
+  .siri-orders-logo span {
+    display: none;
+  }
+
+  .siri-orders-menu button,
+  .siri-orders-sidebar-bottom button {
+    justify-content: center;
+    font-size: 0;
+  }
+
+  .siri-orders-menu button span,
+  .siri-orders-sidebar-bottom button span {
+    font-size: 18px;
+    width: auto;
+  }
+
+  .siri-orders-main {
+    margin-left: 70px;
+    padding: 15px;
+  }
+
+  .add-item-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .orders-table {
+    min-width: 850px;
+  }
+}
+
+@media (max-width: 650px) {
+  .orders-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .orders-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .add-item-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .order-item {
+    grid-template-columns: 1fr auto;
+  }
+}
