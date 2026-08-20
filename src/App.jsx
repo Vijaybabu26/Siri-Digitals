@@ -1,16 +1,16 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import SiriLogo from "./Components/SiriLogo";
-import SiriHome from "./Pages/SiriHome";
+import SiriLogo from "./Components/SiriLogo.jsx";
+import SiriHome from "./Pages/SiriHome.jsx";
 
-import Login from "./Pages/Login";
-import Dashboard from "./Pages/Dashboard";
-import Customers from "./Pages/Customers";
-import Products from "./Pages/Products";
-import Orders from "./Pages/Orders";
-import AddOrder from "./Pages/AddOrder";
-import OrderDetails from "./Pages/OrderDetails";
-import Payments from "./Pages/Payments";
+import Login from "./Pages/Login.jsx";
+import Dashboard from "./Pages/Dashboard.jsx";
+import Customers from "./Pages/Customers.jsx";
+import Products from "./Pages/Products.jsx";
+import Orders from "./Pages/Orders.jsx";
+import AddOrder from "./Pages/AddOrder.jsx";
+import OrderDetails from "./Pages/OrderDetails.jsx";
+import Payments from "./Pages/Payments.jsx";
 
 import "./App.css";
 
